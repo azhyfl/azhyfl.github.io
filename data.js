@@ -1,0 +1,1830 @@
+var data = [
+  {
+    department: "Kurdish",
+    "Semester 1": [
+      {
+        subject: "English Language",
+        credit: 6,
+      },
+      {
+        subject: "History of Language & Dialect",
+        credit: 5,
+      },
+      {
+        subject: "General & Child Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Kurdology",
+        credit: 4,
+      },
+      {
+        subject: "Computer",
+        credit: 6,
+      },
+      {
+        subject: "Academic Debate",
+        credit: 5,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "English Language",
+        credit: 6,
+      },
+      {
+        subject: "Folklore & National Literature",
+        credit: 5,
+      },
+      {
+        subject: "Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Methods of Teaching",
+        credit: 4,
+      },
+      {
+        subject: "Computer",
+        credit: 6,
+      },
+      {
+        subject: "Grammar",
+        credit: 5,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Phonetics",
+        credit: 5,
+      },
+      {
+        subject: "Grammar",
+        credit: 6,
+      },
+      {
+        subject: "Dialects",
+        credit: 4,
+      },
+      {
+        subject: "Meter and Rhyme(Theoretical)",
+        credit: 6,
+      },
+      {
+        subject: "Text",
+        credit: 5,
+      },
+      {
+        subject: "Educational Psychology",
+        credit: 4,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Phonology",
+        credit: 4,
+      },
+      {
+        subject: "Morphology(Theoretical)",
+        credit: 6,
+      },
+      {
+        subject: "Syntax(Theoretical)",
+        credit: 6,
+      },
+      {
+        subject: "Meter & Rhyme(Practical)",
+        credit: 5,
+      },
+      {
+        subject: "Theories of Literature",
+        credit: 5,
+      },
+      {
+        subject: "Approaches to Literature",
+        credit: 4,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Ancient Literature",
+        credit: 4,
+      },
+      {
+        subject: "Morphology(Practical)",
+        credit: 4,
+      },
+      {
+        subject: "Syntax(Theoretical)",
+        credit: 4,
+      },
+      {
+        subject: "Rhetorical (Theoretical)",
+        credit: 4,
+      },
+      {
+        subject: "Theories of Language",
+        credit: 4,
+      },
+      {
+        subject: "Approaches to Literature",
+        credit: 6,
+      },
+      {
+        subject: "Methods of Teaching",
+        credit: 4,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Persian Language",
+        credit: 6,
+      },
+      {
+        subject: "Library & Research Methods",
+        credit: 4,
+      },
+      {
+        subject: "Syntax(Practical)",
+        credit: 6,
+      },
+      {
+        subject: "Theories of Language",
+        credit: 5,
+      },
+      {
+        subject: "Rhetorical (Practical)",
+        credit: 5,
+      },
+      {
+        subject: "Developmental Psychology",
+        credit: 4,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Persian Language",
+        credit: 4,
+      },
+      {
+        subject: "Linguistics",
+        credit: 3,
+      },
+      {
+        subject: "Semantics",
+        credit: 3,
+      },
+      {
+        subject: "Modern Literature",
+        credit: 4,
+      },
+      {
+        subject: "Comparative Literature",
+        credit: 4,
+      },
+      {
+        subject: "Theory of Criticism",
+        credit: 3,
+      },
+      {
+        subject: "Graduation Project",
+        credit: 3,
+      },
+      {
+        subject: "School Observation and Application",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Functional Linguistics",
+        credit: 3,
+      },
+      {
+        subject: "Pragmatics",
+        credit: 3,
+      },
+      {
+        subject: "Practical Criticism",
+        credit: 3,
+      },
+      {
+        subject: "Translation",
+        credit: 3,
+      },
+      {
+        subject: "Graduation Project",
+        credit: 3,
+      },
+      {
+        subject: "Practicing",
+        credit: 12,
+      },
+      {
+        subject: "Contemporary Literature",
+        credit: 3,
+      },
+    ],
+  },
+  {
+    department: "Arabic",
+    "Semester 1": [
+      {
+        subject: "Grammar 1",
+        credit: 6,
+      },
+      {
+        subject: "Academic Debate",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Kurdology",
+        credit: 4,
+      },
+      {
+        subject: "General English Language",
+        credit: 5,
+      },
+      {
+        subject: "Computer Basics 1",
+        credit: 5,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Grammar 2",
+        credit: 6,
+      },
+      {
+        subject: "Morphology 1",
+        credit: 5,
+      },
+      {
+        subject: "Pre-Islamic Literature",
+        credit: 6,
+      },
+      {
+        subject: "Academic English Language",
+        credit: 5,
+      },
+      {
+        subject: "Educational Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Computer Basics 2",
+        credit: 4,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Grammar 3",
+        credit: 5,
+      },
+      {
+        subject: "Morphology 2",
+        credit: 5,
+      },
+      {
+        subject: "Islamic Literature",
+        credit: 4,
+      },
+      {
+        subject: "Prosody",
+        credit: 4,
+      },
+      {
+        subject: "Library",
+        credit: 3,
+      },
+      {
+        subject: "Quran & Hadith Sciences",
+        credit: 5,
+      },
+      {
+        subject: "Expression & Conversation 1",
+        credit: 4,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Grammar 4",
+        credit: 5,
+      },
+      {
+        subject: "Islamic Literature(Omayyad Era)",
+        credit: 4,
+      },
+      {
+        subject: "Abbasid Literature(First Era)",
+        credit: 4,
+      },
+      {
+        subject: "Rhetoric(Semantics)",
+        credit: 5,
+      },
+      {
+        subject: "Rhyme",
+        credit: 3,
+      },
+      {
+        subject: "Methods of Research",
+        credit: 5,
+      },
+      {
+        subject: "Expression & Conversation 2",
+        credit: 4,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Grammar 5",
+        credit: 4,
+      },
+      {
+        subject: "Abbasid Literature (Second Era)",
+        credit: 4,
+      },
+      {
+        subject: "Literary Criticism 1",
+        credit: 4,
+      },
+      {
+        subject: "Rhetoric",
+        credit: 5,
+      },
+      {
+        subject: "Linguistics",
+        credit: 5,
+      },
+      {
+        subject: "Interpretation of Quran",
+        credit: 5,
+      },
+      {
+        subject: "Expression & Conversation 3",
+        credit: 3,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Grammar 6",
+        credit: 4,
+      },
+      {
+        subject: "Ancient Literary Criticism 2",
+        credit: 4,
+      },
+      {
+        subject: "Literature of al-Andalus",
+        credit: 5,
+      },
+      {
+        subject: "Text Analysis",
+        credit: 5,
+      },
+      {
+        subject: "Philology",
+        credit: 5,
+      },
+      {
+        subject: "Methods of Teaching",
+        credit: 4,
+      },
+      {
+        subject: "Late Ages Literature",
+        credit: 3,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Grammar 7",
+        credit: 4,
+      },
+      {
+        subject: "Contemporary & Modern Poetry",
+        credit: 4,
+      },
+      {
+        subject: "Contemporary Literary Criticism",
+        credit: 4,
+      },
+      {
+        subject: "Literary Schools",
+        credit: 4,
+      },
+      {
+        subject: "Translation",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation",
+        credit: 4,
+      },
+      {
+        subject: "Observation",
+        credit: 4,
+      },
+      {
+        subject: "Graduation Project 1",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Grammar 8",
+        credit: 4,
+      },
+      {
+        subject: "Contemporary & Modern Arabic Prose",
+        credit: 3,
+      },
+      {
+        subject: "Contemporary Literary Criticism",
+        credit: 3,
+      },
+      {
+        subject: "Comparative Literature",
+        credit: 3,
+      },
+      {
+        subject: "Linguistics",
+        credit: 2,
+      },
+      {
+        subject: "Application",
+        credit: 12,
+      },
+      {
+        subject: "Graduation Project 2",
+        credit: 3,
+      },
+    ],
+  },
+  {
+    department: "English",
+    "Semester 1": [
+      {
+        subject: "Grammar 1",
+        credit: 6,
+      },
+      {
+        subject: "Reading Comprehension",
+        credit: 6,
+      },
+      {
+        subject: "Listening &Speaking 1",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology",
+        credit: 5,
+      },
+      {
+        subject: "Academic Debate",
+        credit: 3,
+      },
+      {
+        subject: "Computer Skills (in English)",
+        credit: 2,
+      },
+      {
+        subject: "Kurdish Studies (in English)",
+        credit: 2,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Grammar 2",
+        credit: 6,
+      },
+      {
+        subject: "Writing Composition",
+        credit: 6,
+      },
+      {
+        subject: "Listening &Speaking 2",
+        credit: 6,
+      },
+      {
+        subject: "Intro to Literature",
+        credit: 5,
+      },
+      {
+        subject: "Critical Thinking",
+        credit: 3,
+      },
+      {
+        subject: "IT Skills (in English)",
+        credit: 2,
+      },
+      {
+        subject: "Human Rights (in English)(Elective)",
+        credit: 2,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Communication (Listening & Speaking)",
+        credit: 6,
+      },
+      {
+        subject: "Pre-Advanced Grammar",
+        credit: 5,
+      },
+      {
+        subject: "Intro to Phonology",
+        credit: 5,
+      },
+      {
+        subject: "Intro to Morphology",
+        credit: 4,
+      },
+      {
+        subject: "Literary Studies (Mostly: Short Story)",
+        credit: 4,
+      },
+      {
+        subject: "Educational Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Developmental Psychology",
+        credit: 2,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Communication 2 (Reading & Paraphrasing)",
+        credit: 6,
+      },
+      {
+        subject: "Advanced Grammar",
+        credit: 5,
+      },
+      {
+        subject: "Advanced Phonology",
+        credit: 5,
+      },
+      {
+        subject: "Advanced Morphology",
+        credit: 4,
+      },
+      {
+        subject: "Drama of Shakespeare",
+        credit: 4,
+      },
+      {
+        subject: "Language & Culture",
+        credit: 3,
+      },
+      {
+        subject: "Essay & Report Writing",
+        credit: 3,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Intro to Syntax",
+        credit: 5,
+      },
+      {
+        subject: "Intro to Linguistics",
+        credit: 5,
+      },
+      {
+        subject: "Testing & Assessment",
+        credit: 6,
+      },
+      {
+        subject: "Written Translation (English, the source)",
+        credit: 3,
+      },
+      {
+        subject: "19th Century English Poetry",
+        credit: 3,
+      },
+      {
+        subject: "19th Century British Novel",
+        credit: 3,
+      },
+      {
+        subject: "ELT Methodology (Sunrise)",
+        credit: 5,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Syntax (Pre-advanced Level)",
+        credit: 6,
+      },
+      {
+        subject: "Linguistics",
+        credit: 5,
+      },
+      {
+        subject: "Research Writing MLA & APA",
+        credit: 4,
+      },
+      {
+        subject: "Written Translation (English, the target)",
+        credit: 4,
+      },
+      {
+        subject: "Restoration & Pre-Modern Drama",
+        credit: 3,
+      },
+      {
+        subject: "19th, 20th Centuries American Novel",
+        credit: 3,
+      },
+      {
+        subject: "ELT Methodology 2",
+        credit: 5,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Advanced Syntax",
+        credit: 4,
+      },
+      {
+        subject: "Applied Linguistics",
+        credit: 4,
+      },
+      {
+        subject: "20th Century British Fiction",
+        credit: 4,
+      },
+      {
+        subject: "Modern Drama",
+        credit: 4,
+      },
+      {
+        subject: "Graduation Project (Theoretical)",
+        credit: 4,
+      },
+      {
+        subject: "Literary Criticism (Elective)",
+        credit: 4,
+      },
+      {
+        subject: "Intro to Psycholinguistics",
+        credit: 4,
+      },
+      {
+        subject: "School Observing",
+        credit: 4,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Semantics & Pragmatics",
+        credit: 3,
+      },
+      {
+        subject: "Syllabus Design",
+        credit: 4,
+      },
+      {
+        subject: "Intro to Stylistics (Elective)",
+        credit: 2,
+      },
+      {
+        subject: "Modern Poetry",
+        credit: 3,
+      },
+      {
+        subject: "Children Literature",
+        credit: 3,
+      },
+      {
+        subject: "Graduation Project (Practical)",
+        credit: 3,
+      },
+      {
+        subject: "School Practicum",
+        credit: 12,
+      },
+    ],
+  },
+  {
+    department: "Biology",
+    "Semester 1": [
+      {
+        subject: "Kurdnasy 1",
+        credit: 4,
+      },
+      {
+        subject: "Academic Debate 1",
+        credit: 5,
+      },
+      {
+        subject: "General English",
+        credit: 6,
+      },
+      {
+        subject: "Computer Essentials 1",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology 1",
+        credit: 4,
+      },
+      {
+        subject: "General Biology 1",
+        credit: 5,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Kurdnasy 2",
+        credit: 4,
+      },
+      {
+        subject: "Academic Debate 2",
+        credit: 5,
+      },
+      {
+        subject: "General English",
+        credit: 6,
+      },
+      {
+        subject: "Computer Essentials 2",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology 2",
+        credit: 4,
+      },
+      {
+        subject: "General Biology 2",
+        credit: 5,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Invertebrates",
+        credit: 6,
+      },
+      {
+        subject: "Histology",
+        credit: 6,
+      },
+      {
+        subject: "Plant Anatomy",
+        credit: 6,
+      },
+      {
+        subject: "General Chemistry",
+        credit: 6,
+      },
+      {
+        subject: "Biostatistics",
+        credit: 3,
+      },
+      {
+        subject: "Educational Psychology 1",
+        credit: 3,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Parasitology",
+        credit: 6,
+      },
+      {
+        subject: "Embryology",
+        credit: 6,
+      },
+      {
+        subject: "Wild Life Management",
+        credit: 5,
+      },
+      {
+        subject: "Biochemistry",
+        credit: 6,
+      },
+      {
+        subject: "Geology",
+        credit: 4,
+      },
+      {
+        subject: "Educational Psychology 2",
+        credit: 3,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Animal Physiology 1",
+        credit: 6,
+      },
+      {
+        subject: "Microbiology",
+        credit: 6,
+      },
+      {
+        subject: "General Mycology",
+        credit: 6,
+      },
+      {
+        subject: "Entomology",
+        credit: 6,
+      },
+      {
+        subject: "Genetics",
+        credit: 6,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Animal Physiology 2",
+        credit: 5,
+      },
+      {
+        subject: "Microbial Genetics",
+        credit: 5,
+      },
+      {
+        subject: "Pathogenic Fungi",
+        credit: 5,
+      },
+      {
+        subject: "Ecology & Pollution",
+        credit: 6,
+      },
+      {
+        subject: "Phycology",
+        credit: 5,
+      },
+      {
+        subject: "Curriculum & Teaching Methods",
+        credit: 4,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Plant Physiology",
+        credit: 6,
+      },
+      {
+        subject: "Molecular Biology",
+        credit: 6,
+      },
+      {
+        subject: "Pathogenic Bactria",
+        credit: 6,
+      },
+      {
+        subject: "Virology",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation",
+        credit: 3,
+      },
+      {
+        subject: "School Viewing",
+        credit: 3,
+      },
+      {
+        subject: "Research Project 1",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Plant Taxonomy",
+        credit: 5,
+      },
+      {
+        subject: "Immunology",
+        credit: 5,
+      },
+      {
+        subject: "Comparative Anatomy",
+        credit: 5,
+      },
+      {
+        subject: "Research Project 2",
+        credit: 3,
+      },
+      {
+        subject: "Teaching Application",
+        credit: 12,
+      },
+    ],
+  },
+  {
+    department: "Chemistry",
+    "Semester 1": [
+      {
+        subject: "Kurdnasy 1",
+        credit: 4,
+      },
+      {
+        subject: "Academic Debate 1",
+        credit: 5,
+      },
+      {
+        subject: "General English",
+        credit: 6,
+      },
+      {
+        subject: "Computer essentials 1",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology 1",
+        credit: 4,
+      },
+      {
+        subject: "General Chemistry 1",
+        credit: 5,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Kurdnasy 2",
+        credit: 4,
+      },
+      {
+        subject: "Academic Debate 2",
+        credit: 5,
+      },
+      {
+        subject: "Academic English ",
+        credit: 6,
+      },
+      {
+        subject: "Computer essentials 2",
+        credit: 6,
+      },
+      {
+        subject: "General Psychology 2",
+        credit: 4,
+      },
+      {
+        subject: "General Chemistry 2",
+        credit: 5,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Analytical Chemistry 1",
+        credit: 6,
+      },
+      {
+        subject: "Physical Chemistry 1",
+        credit: 6,
+      },
+      {
+        subject: "Bonding and structure main group elements",
+        credit: 6,
+      },
+      {
+        subject: "Basic organic chemistry",
+        credit: 6,
+      },
+      {
+        subject: "Safety & Chemical hazard",
+        credit: 2,
+      },
+      {
+        subject: "Mathematics",
+        credit: 2,
+      },
+      {
+        subject: "Guidance & mental health",
+        credit: 2,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Analytical Chemistry 2",
+        credit: 6,
+      },
+      {
+        subject: "Physical Chemistry 2",
+        credit: 6,
+      },
+      {
+        subject: "Principle of soiled state",
+        credit: 6,
+      },
+      {
+        subject: "Organic chemistry",
+        credit: 6,
+      },
+      {
+        subject: "Chemical Pollution",
+        credit: 2,
+      },
+      {
+        subject: "Statistics",
+        credit: 2,
+      },
+      {
+        subject: "Developmental Psychology",
+        credit: 2,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Biochemistry1",
+        credit: 5,
+      },
+      {
+        subject: "Organic Chemistry1",
+        credit: 6,
+      },
+      {
+        subject: "Inorganic Chemistry1",
+        credit: 5,
+      },
+      {
+        subject: "Physical Chemistry1",
+        credit: 6,
+      },
+      {
+        subject: "Industrial Chemistry",
+        credit: 4,
+      },
+      {
+        subject: "Research Project1",
+        credit: 2,
+      },
+      {
+        subject: "Teaching Methods1",
+        credit: 2,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Biochemistry2",
+        credit: 5,
+      },
+      {
+        subject: "Organic Chemistry2",
+        credit: 6,
+      },
+      {
+        subject: "Inorganic Chemistry2",
+        credit: 5,
+      },
+      {
+        subject: "Physical Chemistry2",
+        credit: 6,
+      },
+      {
+        subject: "Radiation",
+        credit: 4,
+      },
+      {
+        subject: "Research Project2",
+        credit: 2,
+      },
+      {
+        subject: "Teaching Methods2",
+        credit: 2,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Instrument Analysis1",
+        credit: 5,
+      },
+      {
+        subject: "Organic Identification1",
+        credit: 4,
+      },
+      {
+        subject: "Polymer",
+        credit: 4,
+      },
+      {
+        subject: "Clinical Biochemistry1",
+        credit: 3,
+      },
+      {
+        subject: "Food Chemistry1",
+        credit: 3,
+      },
+      {
+        subject: "Quantum Chemistry1",
+        credit: 3,
+      },
+      {
+        subject: "Research Project1",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation1",
+        credit: 3,
+      },
+      {
+        subject: "Teaching Application1",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Instrument Analysis2",
+        credit: 3,
+      },
+      {
+        subject: "Organic Identification2",
+        credit: 2,
+      },
+      {
+        subject: "Petroleum Chemistry",
+        credit: 2,
+      },
+      {
+        subject: "Clinical Biochemistry2",
+        credit: 2,
+      },
+      {
+        subject: "Food Chemistry2",
+        credit: 2,
+      },
+      {
+        subject: "Quantum Chemistry2",
+        credit: 1,
+      },
+      {
+        subject: "Research Project2",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation2",
+        credit: 3,
+      },
+      {
+        subject: "Teaching Application2",
+        credit: 12,
+      },
+    ],
+  },
+  {
+    department: "Geography",
+    "Semester 1": [
+      {
+        subject: "Geographical Research Methods",
+        credit: 65,
+      },
+      {
+        subject: "Scientific Debate",
+        credit: 65,
+      },
+      {
+        subject: "Kurdology",
+        credit: 52,
+      },
+      {
+        subject: "General English",
+        credit: 52,
+      },
+      {
+        subject: "Computer",
+        credit: 65,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Geographical Thought",
+        credit: 135,
+      },
+      {
+        subject: "Human Rights",
+        credit: 135,
+      },
+      {
+        subject: "Kurdology",
+        credit: 108,
+      },
+      {
+        subject: "General English",
+        credit: 108,
+      },
+      {
+        subject: "Computer",
+        credit: 135,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Principles of Geo-morphology",
+        credit: 52,
+      },
+      {
+        subject: "Geography of Weather and Climate",
+        credit: 52,
+      },
+      {
+        subject: "Population Geography",
+        credit: 65,
+      },
+      {
+        subject: "Educational Psychology",
+        credit: 65,
+      },
+      {
+        subject: "Physical Geography Texts in English",
+        credit: 52,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Applied Geo-Morphology",
+        credit: 52,
+      },
+      {
+        subject: "Applied Climatology",
+        credit: 52,
+      },
+      {
+        subject: "The geography of the Environment and Society",
+        credit: 65,
+      },
+      {
+        subject: "Principles of Education",
+        credit: 65,
+      },
+      {
+        subject: "Human Geography Texts in English",
+        credit: 52,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Geographic Information System",
+        credit: 65,
+      },
+      {
+        subject: "Urban Geography",
+        credit: 65,
+      },
+      {
+        subject: "Geography of the Ancient World",
+        credit: 65,
+      },
+      {
+        subject: "Industrial Geography",
+        credit: 52,
+      },
+      {
+        subject: "Teaching Methods",
+        credit: 52,
+      },
+      {
+        subject: "Water Resources",
+        credit: 52,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Remote Sensing",
+        credit: 65,
+      },
+      {
+        subject: "Social Geography",
+        credit: 52,
+      },
+      {
+        subject: "Geography of the New World",
+        credit: 52,
+      },
+      {
+        subject: "Geography of Transportation And International Trade",
+        credit: 52,
+      },
+      {
+        subject: "Measurement and Assessment",
+        credit: 52,
+      },
+      {
+        subject: "Natural Resources",
+        credit: 52,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Political Geography",
+        credit: 65,
+      },
+      {
+        subject: "Regional Planning",
+        credit: 52,
+      },
+      {
+        subject: "Principles of Sustainable development",
+        credit: 52,
+      },
+      {
+        subject: "Industrial and Energy Geography",
+        credit: 52,
+      },
+      {
+        subject: "Graduation Research",
+        credit: 0,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "The geography of the World Economy",
+        credit: 65,
+      },
+      {
+        subject: "Regional Geography(Kurdistan & Iraq)",
+        credit: 52,
+      },
+      {
+        subject: "Natural Hazards",
+        credit: 52,
+      },
+      {
+        subject: "Agricultural Geography",
+        credit: 52,
+      },
+      {
+        subject: "Graduation Research",
+        credit: 0,
+      },
+    ],
+  },
+  {
+    department: "Psychology",
+    "Semester 1": [
+      {
+        subject: "Academic Debate",
+        credit: 5,
+      },
+      {
+        subject: "General Psychology 1",
+        credit: 4,
+      },
+      {
+        subject: "History of Education",
+        credit: 5,
+      },
+      {
+        subject: "General English Language",
+        credit: 6,
+      },
+      {
+        subject: "Kurdology",
+        credit: 4,
+      },
+      {
+        subject: "Computer",
+        credit: 6,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "Academic Debate",
+        credit: 5,
+      },
+      {
+        subject: "General Psychology 2",
+        credit: 4,
+      },
+      {
+        subject: "Bases of Education",
+        credit: 5,
+      },
+      {
+        subject: "Academic English",
+        credit: 6,
+      },
+      {
+        subject: "Kurdology",
+        credit: 4,
+      },
+      {
+        subject: "Computer",
+        credit: 6,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Child Psychology",
+        credit: 5,
+      },
+      {
+        subject: "Educational Psychology",
+        credit: 6,
+      },
+      {
+        subject: "Sociology",
+        credit: 4,
+      },
+      {
+        subject: "Curriculum & Lineation of Book",
+        credit: 4,
+      },
+      {
+        subject: "Educational & Psychological texts in English",
+        credit: 4,
+      },
+      {
+        subject: "Teaching Thinking",
+        credit: 5,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Adolescence Psychology",
+        credit: 5,
+      },
+      {
+        subject: "School Psychology",
+        credit: 5,
+      },
+      {
+        subject: "Social-Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Educational plan",
+        credit: 4,
+      },
+      {
+        subject: "Educational Texts in English",
+        credit: 4,
+      },
+      {
+        subject: "Critical Thinking",
+        credit: 5,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Theories of Personality",
+        credit: 5,
+      },
+      {
+        subject: "Experimental psychology",
+        credit: 4,
+      },
+      {
+        subject: "Comparative Education",
+        credit: 4,
+      },
+      {
+        subject: "Educational Statistics",
+        credit: 4,
+      },
+      {
+        subject: "Methods of Research",
+        credit: 5,
+      },
+      {
+        subject: "principles of Teaching",
+        credit: 4,
+      },
+      {
+        subject: "educational Tools",
+        credit: 4,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "personality disorder",
+        credit: 4,
+      },
+      {
+        subject: "Experimental Designs",
+        credit: 4,
+      },
+      {
+        subject: "Psychological & Educational Guidance",
+        credit: 5,
+      },
+      {
+        subject: "Educational Statistics",
+        credit: 4,
+      },
+      {
+        subject: "Research Writing",
+        credit: 5,
+      },
+      {
+        subject: "Teaching Methods",
+        credit: 4,
+      },
+      {
+        subject: "Psychology of Individual Differences",
+        credit: 4,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "Educational Management",
+        credit: 3,
+      },
+      {
+        subject: "Special Education",
+        credit: 4,
+      },
+      {
+        subject: "Measurement & Evaluation",
+        credit: 3,
+      },
+      {
+        subject: "Health Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Clinical Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Cognitive Psychology",
+        credit: 4,
+      },
+      {
+        subject: "Educational Vision & Practice",
+        credit: 3,
+      },
+      {
+        subject: "Graduation Research",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "Educational Supervision & Administration",
+        credit: 3,
+      },
+      {
+        subject: "Philosophy of Education",
+        credit: 3,
+      },
+      {
+        subject: "Learning difficulties",
+        credit: 3,
+      },
+      {
+        subject: "Physiological Psychology",
+        credit: 3,
+      },
+      {
+        subject: "School Observation & Application",
+        credit: 12,
+      },
+      {
+        subject: "Graduation Research",
+        credit: 3,
+      },
+    ],
+  },
+  {
+    department: "Mathematics",
+    "Semester 1": [
+      {
+        subject: "General English 1",
+        credit: 6,
+      },
+      {
+        subject: "Computer Essential 1",
+        credit: 6,
+      },
+      {
+        subject: "Kurdology",
+        credit: 2,
+      },
+      {
+        subject: "General Psychology 1",
+        credit: 2,
+      },
+      {
+        subject: "Discrete Mathematics",
+        credit: 5,
+      },
+      {
+        subject: "Discrete Mathematics",
+        credit: 5,
+      },
+      {
+        subject: "Finite Mathematics",
+        credit: 4,
+      },
+    ],
+    "Semester 2": [
+      {
+        subject: "General English 2",
+        credit: 4,
+      },
+      {
+        subject: "Computer Essential 2",
+        credit: 6,
+      },
+      {
+        subject: "Scientific Debate",
+        credit: 4,
+      },
+      {
+        subject: "General Psychology 2",
+        credit: 2,
+      },
+      {
+        subject: "Foundations of Mathematics",
+        credit: 5,
+      },
+      {
+        subject: "Calculus 2",
+        credit: 5,
+      },
+      {
+        subject: "Matrix Analysis",
+        credit: 4,
+      },
+    ],
+    "Semester 3": [
+      {
+        subject: "Calculus of Several Variable",
+        credit: 5,
+      },
+      {
+        subject: "Linear Algebra 1",
+        credit: 5,
+      },
+      {
+        subject: "Differential Equation",
+        credit: 5,
+      },
+      {
+        subject: "Educational Psychology 1",
+        credit: 4,
+      },
+      {
+        subject: "Probability",
+        credit: 4,
+      },
+      {
+        subject: "Axiomatic System",
+        credit: 3,
+      },
+      {
+        subject: "Computer Programming",
+        credit: 4,
+      },
+    ],
+    "Semester 4": [
+      {
+        subject: "Advance Calculus",
+        credit: 5,
+      },
+      {
+        subject: "Linear Algebra 2",
+        credit: 5,
+      },
+      {
+        subject: "Ordinary Differential Equation",
+        credit: 5,
+      },
+      {
+        subject: "Educational Psychology 2",
+        credit: 4,
+      },
+      {
+        subject: "Statistics",
+        credit: 4,
+      },
+      {
+        subject: "Geometry",
+        credit: 3,
+      },
+      {
+        subject: "Advanced Programming",
+        credit: 4,
+      },
+    ],
+    "Semester 5": [
+      {
+        subject: "Numerical Analysis",
+        credit: 5,
+      },
+      {
+        subject: "Mathematical Analysis 1",
+        credit: 5,
+      },
+      {
+        subject: "Mathematical Statistics",
+        credit: 5,
+      },
+      {
+        subject: "Abstract Algebra 1",
+        credit: 5,
+      },
+      {
+        subject: "Partial Differential Equation",
+        credit: 4,
+      },
+      {
+        subject: "Curriculum and Teaching Method",
+        credit: 3,
+      },
+      {
+        subject: "Optional 1",
+        credit: 3,
+      },
+    ],
+    "Semester 6": [
+      {
+        subject: "Applied Numerical Analysis",
+        credit: 5,
+      },
+      {
+        subject: "Mathematical Analysis",
+        credit: 5,
+      },
+      {
+        subject: "Applied Statistics",
+        credit: 5,
+      },
+      {
+        subject: "Abstract Algebra 2",
+        credit: 5,
+      },
+      {
+        subject: "Applied of Mathematics",
+        credit: 4,
+      },
+      {
+        subject: "Pure Mathematics",
+        credit: 3,
+      },
+      {
+        subject: "Optional 2",
+        credit: 3,
+      },
+    ],
+    "Semester 7": [
+      {
+        subject: "A first Course in Topological Space",
+        credit: 6,
+      },
+      {
+        subject: "Complex Variable",
+        credit: 6,
+      },
+      {
+        subject: "Optimization Theory",
+        credit: 6,
+      },
+      {
+        subject: "Optional 3",
+        credit: 3,
+      },
+      {
+        subject: "Measurement & Evaluation",
+        credit: 3,
+      },
+      {
+        subject: "Research Project 1",
+        credit: 3,
+      },
+      {
+        subject: "School Viewing",
+        credit: 3,
+      },
+    ],
+    "Semester 8": [
+      {
+        subject: "A second course in Topological space",
+        credit: 4,
+      },
+      {
+        subject: "Complex Analysis",
+        credit: 4,
+      },
+      {
+        subject: "Operations Research",
+        credit: 4,
+      },
+      {
+        subject: "Optional 4",
+        credit: 3,
+      },
+      {
+        subject: "Teaching Application",
+        credit: 12,
+      },
+      {
+        subject: "Research Project 2",
+        credit: 3,
+      },
+    ],
+  },
+];
