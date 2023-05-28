@@ -2,383 +2,159 @@
 <html>
 
 <head>
-  <title>Count My Marks</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <style>
-    @font-face {
-      font-family: "Nrt";
-      /*a name to be used later*/
-      src: url("NRT-Reg.ttf");
-      /*URL to font*/
-    }
-
-    body {
-      background-color: #f5f5f5;
-      font-family: "Nrt", Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 500;
-      margin-top: 1rem;
-    }
-
-    h4 {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-top: 1rem;
-    }
-
-    form {
-      width: 50%;
-      margin: 0 auto;
-      margin-top: 1rem;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    #result {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-
-    .form-control::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      opacity: 0.3;
-      /* Firefox */
-    }
-
-    .form-control:-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      opacity: .3;
-    }
-
-    .form-control::-ms-input-placeholder {
-      /* Microsoft Edge */
-      opacity: .3;
-    }
-  </style>
-  <script type="text/javascript" src="data.js"></script>
-  <script>
-    function addDepartmentsToSelect() {
-      var select = document.getElementById("department");
-      var departments = data;
-      console.log(data);
-      for (var i = 0; i < departments.length; i++) {
-        select.innerHTML += '<option>' + data[i].department + '</option>'
-      }
-    }
-
-    function printAllCreditsWhenChosen() {
-      var select = document.getElementById("department");
-      var department = select.options[select.selectedIndex].value;
-      var credits = data.find(x => x.department == department);
-      //print to the console
-      console.log(credits);
-    }
-
-    function round_(n, d) {
-      return Math.round(n * Math.pow(10, d)) / Math.pow(10, d);
-    }
-
-    var markCount = 3;
-    function getMarkElements() {
-      var result = [];
-      for (var i = 1; i <= markCount; i++)
-        result.push(document.getElementsByName("mark" + i)[0]);
-      return result;
-    }
-
-    function getCreditElements() {
-      var result = [];
-      for (var i = 1; i <= markCount; i++)
-        result.push(document.getElementsByName("credit" + i)[0]);
-      return result;
-    }
-
-    function radioButtonChanged() {
-      var isCredit = document.getElementsByName("credit")[0].checked;
-      var marks = getMarkElements();
-      var credits = getCreditElements();
-      if (isCredit) {
-        for (var i = 0; i < marks.length; i++) {
-          credits[i].setAttribute("required", "");
-          credits[i].removeAttribute("disabled");
+    <title>Chess FEN to Board Conversion</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Converts a FEN string to a chess board." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/copy.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: "Segoe UI Symbol";
+            src: url('./fonts/seguisym.ttf') format("truetype");
         }
-      } else {
-        for (var i = 0; i < marks.length; i++) {
-          credits[i].removeAttribute("required");
-          credits[i].setAttribute("disabled", "");
-        }
-      }
-    }
-
-    function addMark() {
-      var mc = markCount + 1;
-      var newMark = document.createElement("div");
-      var isRequired = document.getElementsByName("credit")[0].checked
-        ? "required"
-        : "disabled";
-      console.log(document.getElementsByName("credit")[0].checked);
-      newMark.className = "row flex-row-reverse mb-3 g-3 marksdiv";
-      newMark.innerHTML =
-        '<div class="col-auto"><label for=\'mark' +
-        mc +
-        "' class=\"col-form-label\">نمرە</label></div><div class=\"col-auto\"><input type='text' name='mark" +
-        mc +
-        '\' class="form-control text-center" required oninvalid="this.setCustomValidity(\'تکایە نمرەکەت بنووسە\')"' +
-        ' oninput="this.setCustomValidity(\'\')"/></div><div class="col-auto"><label for=\'credit' +
-        mc +
-        "' class=\"col-form-label\">کرێدت</label></div><div class=\"col-auto\"><input type='text' name='credit" +
-        mc +
-        '\'  class="form-control text-center" oninvalid="this.setCustomValidity(\'تکایە کرێدتی وانەکە بنوسە\')"' +
-        "oninput=\"this.setCustomValidity('')\" " +
-        isRequired +
-        "/></div>";
-      document
-        .getElementsByTagName("form")[0]
-        .insertBefore(newMark, document.getElementsByClassName("btndiv")[0]);
-      markCount++;
-      window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function deleteLastMark() {
-      if (markCount > 1) {
-        document
-          .getElementsByTagName("form")[0]
-          .removeChild(
-            document.getElementsByClassName("marksdiv")[markCount - 1]
-          );
-        markCount--;
-      }
-    }
-
-    let LETTERS = { a: 90, b: 80, c: 70, d: 60, e: 50, f: 0 };
-    //let's bring some colors from green to orange in a map from 50 to 90, ten by ten
-    let COLORS = {
-      90: "#4caf50",
-      80: "#8bc34a",
-      70: "#cddc39",
-      60: "#ffeb3b",
-      50: "#ffc107",
-    };
-    function calculate() {
-      //let's check form validity first
-      var form = document.forms[0];
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      var marks = getMarkElements();
-      var credits = getCreditElements();
-
-      var isCredit = document.getElementsByName("credit")[0].checked;
-
-      var marksList = [];
-      var creditsList = [];
-      var maximumCredit = 0;
-      for (var i = 0; i < marks.length; i++) {
-        var mark = marks[i].value;
-
-        //first check if the user entered credits or not
-        if (!isCredit) {
-          //if the user didn't enter credits, then we will calculate the credits
-          var finalMarkMin =
-            LETTERS[mark[0].toLowerCase()] + (mark.length > 1) * 5;
-          var finalMarkMax = finalMarkMin < 95 ? finalMarkMin + 4 : 100;
-
-          marksList.push([finalMarkMin, finalMarkMax]);
-        } else {
-          var credit = parseInt(credits[i].value);
-          var finalMarkMin =
-            LETTERS[mark[0].toLowerCase()] + (mark.length > 1) * 5;
-          var finalMarkMax = finalMarkMin < 95 ? finalMarkMin + 4 : 100;
-
-          //find the credit
-          var constVal = credit / 100;
-          var finalCreditMin =
-            Math.round(constVal * finalMarkMin * 100) / 100;
-          var finalCreditMax =
-            Math.round(constVal * finalMarkMax * 100) / 100;
-
-          maximumCredit += credit;
-
-          marksList.push([finalMarkMin, finalMarkMax]);
-          creditsList.push([finalCreditMin, finalCreditMax]);
-        }
-      }
-
-      var marksAvgMin = marksList.reduce((a, b) => a + b[0], 0) / marksList.length;
-      var marksAvgMax = marksList.reduce((a, b) => a + b[1], 0) / marksList.length;
-
-      if (isCredit) {
-        var totalCreditsMin = creditsList.reduce((a, b) => a + b[0], 0);
-        var totalCreditsMax = creditsList.reduce((a, b) => a + b[1], 0);
-
-        var totalCreditsMinPercent = round_(totalCreditsMin / maximumCredit * 100, 2);
-        var totalCreditsMaxPercent = round_(totalCreditsMax / maximumCredit * 100, 2);
-
-        var checkDiv = document.getElementsByClassName("card resultcard");
-        var resultCard = checkDiv.length ? checkDiv[0] : document.createElement('div');
-        resultCard.className = "card resultcard";
-        resultCard.style.backgroundColor = COLORS[Math.floor(totalCreditsMinPercent / 10) * 10];
-        resultCard.style.width = '300px';
-        resultCard.style.margin = '0 auto';
-        resultCard.innerHTML = "<div class='card-body text-center'><h1 style=\"color:#F5F5F5;\">" + totalCreditsMinPercent + ' - ' + totalCreditsMaxPercent + "</h1></div>";
-        document.getElementById("result").appendChild(resultCard);
-      } else {
-        var checkDiv = document.getElementsByClassName("card resultcard");
-        var resultCard = checkDiv.length ? checkDiv[0] : document.createElement('div');
-        resultCard.className = "card resultcard";
-        resultCard.style.backgroundColor = COLORS[Math.floor(round_(marksAvgMin, 2) / 10) * 10];
-        resultCard.style.width = '300px';
-        resultCard.style.margin = '0 auto';
-        resultCard.innerHTML = "<div class='card-body text-center'><h1 style=\"color:#F5F5F5;\">" + round_(marksAvgMin, 2) + ' - ' + round_(marksAvgMax, 2) + "</h1></div>";
-        document.getElementById("result").appendChild(resultCard);
-      }
-    }
-  </script>
+    </style>
 </head>
 
 <body>
-  <select id="department" onchange="printAllCreditsWhenChosen()">
-    <option selected>نییە</option>
-  </select>
-  <div style="margin-bottom: 60px; margin-top: 30px">
-    <h1>دۆزینەوەی کرێدت و تێکڕای نمرە</h1>
-  </div>
-
-  <div class="card" style="width: 300px; position: fixed; top: 20px; right: 20px">
-    <div class="card-body text-end">
-      <p>
-        ئەم سیستەمە تایبەتە بەو زانکۆیانەی کە نمرە بەم شێوەیە دەدەنەوە
-        <br /><br />
-      <div class="text-center">
-        <code>
-          A+: 95 - 100<br />
-          A : 90 - 94<br />
-          B+: 85 - 89<br />
-          B : 80 - 84<br />
-          C+: 75 - 79<br />
-          C : 70 - 74<br />
-          D+: 65 - 69<br />
-          D : 60 - 64<br />
-          E+: 55 - 59<br />
-          E : 50 - 54<br />
-        </code>
-      </div>
-
-
-      <br />
-
-      تکایە ئاگاداربە، ئەگەر فەیڵت هەبێت نمرەکان ناتوانرێت بژمێردرێت
-      </p>
+    <div align="center">
+        <div>
+            <h1>Chess FEN to Board Conversion</h1>
+            <p>Converts a FEN string to a chess board.</p>
+            <p>For more information about FEN strings, see <a
+                    href="https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation">Forsyth–Edwards Notation</a>.
+            </p>
+        </div>
+        <div><input id="fenInput" style="width: 73ch;" value="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR" />
+            <select id="whiteAndBlackSelect">
+                <option value="0">Black and white squares</option>
+                <option value="1">Black and white squares (alt)</option>
+                <option value="2">Black and white squares (alt 2)</option>
+                <option value="3">Black and white squares (alt 3)</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="onlyOneColor" type="checkbox" /> Only one color
+            <select id="onlyOneColorSelect">
+            </select>
+        </div>
+        <div id="fenDisplay" class="mb-4 mt-4" style="font-size:35px; font-family:'Segoe UI Symbol';"></div>
+        <div>
+            <button id="copyButton" class="btn btn-secondary">Copy to clipboard</button>
+        </div>
     </div>
-  </div>
 
-  <form action="CountMyMarks.php" method="post">
-    <h5 style="text-align: right; margin-bottom: 30px" class="">
-      نمرەکانت داخڵ بکە
-    </h5>
-    <!-- let's identify if the users enters credits also or only marks-->
-    <div style="text-align: right; margin-bottom: 20px">
-      <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" name="credit" value="yes" onclick="radioButtonChanged()" checked />
-        <label for="credit" class="form-check-label">بەڵێ</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" name="credit" value="no" onclick="radioButtonChanged()" />
-        <label for="credit" class="form-check-label">نەخێر</label>
-      </div>
-      <label for="credit" class="form-check-label">ئایا دەتەوێت کرێدت داخڵ بکەیت؟</label>
-    </div>
-    <br />
+    <script>
+        var result = '';
+        const symbols = {
+            'P': '♙', 'N': '♘', 'B': '♗', 'R': '♖', 'Q': '♕', 'K': '♔',
+            'p': '♟', 'n': '♞', 'b': '♝', 'r': '♜', 'q': '♛', 'k': '♚'
+        };
 
-    <div class="row flex-row-reverse mb-3 g-3 marksdiv">
-      <div class="col-auto">
-        <label for="mark1" class="col-form-label">نمرە</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="mark1" class="form-control text-center" required placeholder="A+"
-          oninvalid="this.setCustomValidity('تکایە نمرەکەت بنووسە')" oninput="this.setCustomValidity('')" />
-      </div>
-      <div class="col-auto">
-        <label for="credit1" class="col-form-label">کرێدت</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="credit1" class="form-control text-center" placeholder="3"
-          oninvalid="this.setCustomValidity('تکایە کرێدتی وانەکە بنوسە')" oninput="this.setCustomValidity('')" />
-      </div>
-    </div>
-    <div class="row flex-row-reverse mb-3 g-3 marksdiv">
-      <div class="col-auto">
-        <label for="mark2" class="col-form-label">نمرە</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="mark2" class="form-control text-center" required placeholder="B"
-          oninvalid="this.setCustomValidity('تکایە نمرەکەت بنووسە')" oninput="this.setCustomValidity('')" />
-      </div>
-      <div class="col-auto">
-        <label for="credit2" class="col-form-label">کرێدت</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="credit2" class="form-control text-center" placeholder="3"
-          oninvalid="this.setCustomValidity('تکایە کرێدتی وانەکە بنوسە')" oninput="this.setCustomValidity('')" />
-      </div>
-    </div>
-    <div class="row flex-row-reverse mb-3 g-3 marksdiv">
-      <div class="col-auto">
-        <label for="mark3" class="col-form-label">نمرە</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="mark3" class="form-control text-center" required placeholder="C+"
-          oninvalid="this.setCustomValidity('تکایە نمرەکەت بنووسە')" oninput="this.setCustomValidity('')" />
-      </div>
-      <div class="col-auto">
-        <label for="credit3" class="col-form-label">کرێدت</label>
-      </div>
-      <div class="col-auto">
-        <input type="text" name="credit3" class="form-control text-center" placeholder="3"
-          oninvalid="this.setCustomValidity('تکایە کرێدتی وانەکە بنوسە')" oninput="this.setCustomValidity('')" />
-      </div>
-    </div>
-    <!-- Make a button to add more marks to the form-->
-    <div class="btndiv row justify-content-end" style="padding-top: 30px">
-      <div class="col-auto">
-        <button type="button" class="btn btn-light" onclick="deleteLastMark()">
-          ڕەشکردنەوەی وانە
-        </button>
-      </div>
-      <div class="col-auto">
-        <button type="button" class="btn btn-light" onclick="addMark()">
-          زیادکردنی وانە
-        </button>
-      </div>
-    </div>
-  </form>
-  <!-- let's not refresh the page when the button is clicked-->
-  <div align="center" style="margin: 30px">
-    <button type="button" class="btn btn-primary" onclick="calculate()">
-      هەژمارکردن
-    </button>
-  </div>
-  <div>
-    <p id="result"></p>
-  </div>
+        const onlyOneColors = ['.', ' ', '...', '   '];
+        const whitesAndBlacks = [['□', '■'], ['░', '▓'], ['░', '█'], ['▏▔', '█']];
 
-  <script>
-    addDepartmentsToSelect();
-  </script>
+        var whiteAndBlack = whitesAndBlacks[0];
+        var differEmptyCells = true;
+        var emptyCell = '.';
+
+        function convertFENToBoard(fen, differEmptyCells = true, emptyCell = '.',
+            whiteAndBlack = whitesAndBlacks[0]) {
+            let result = '';
+
+            const [w, b] = whiteAndBlack;
+
+            const lines = fen.split('/');
+            for (let i = 0; i < lines.length; i++) {
+                var emptyCells = [];
+                for (let k = 0; k < 8; k++) {
+                    if (i % 2 == 0)
+                        emptyCells.push(k % 2 == 0 ? w : b);
+                    else
+                        emptyCells.push(k % 2 == 0 ? b : w);
+                }
+                let line = '';
+                let colInd = 0;
+                for (let j = 0; j < lines[i].length; j++) {
+                    if (isNaN(lines[i][j])) {
+                        line += symbols[lines[i][j]];
+                        colInd += 1;
+                    } else {
+                        if (differEmptyCells) {
+                            line += emptyCells.slice(colInd, colInd + parseInt(lines[i][j])).join('');
+                        } else {
+                            line += emptyCell.repeat(parseInt(lines[i][j]));
+                        }
+                        colInd += parseInt(lines[i][j]);
+                    }
+                }
+                result += line + '<br>';
+            }
+
+            document.getElementById('fenDisplay').innerHTML = result;
+            return result.replace(/<br>/g, '\n');
+        }
+
+        const fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR';
+        result = convertFENToBoard(fen, true, '.', whiteAndBlack);
+
+        $(document).ready(function () {
+            $('#fenInput').focus();
+
+            $('#fenInput').on('keyup', function (e) {
+                if (e.keyCode == 13) {
+                    $('#fenInput').blur();
+                }
+            });
+
+            $('#fenInput').on('input', function () {
+                result = convertFENToBoard($(this).val(), differEmptyCells, emptyCell, whiteAndBlack);
+            });
+
+            $('#copyButton').on('click', function () {
+                copyTextToClipboard(result);
+                //show a message that it was copied
+                $('#copyButton').text('Copied!');
+                setTimeout(function () {
+                    $('#copyButton').text('Copy to clipboard');
+                }, 2000);
+            });
+
+            $('#whiteAndBlackSelect').val(0);
+
+            $('#whiteAndBlackSelect').on('change', function () {
+                whiteAndBlack = whitesAndBlacks[$(this).val()];
+                result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
+            });
+
+            $('#onlyOneColor').on('change', function () {
+                if ($(this).is(':checked')) {
+                    $('#onlyOneColorSelect').show();
+                    $('#whiteAndBlackSelect').hide();
+                    differEmptyCells = false;
+                } else {
+                    $('#onlyOneColorSelect').hide();
+                    $('#whiteAndBlackSelect').show();
+                    differEmptyCells = true;
+                }
+                result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
+            });
+
+            $('#onlyOneColor').prop('checked', false);
+
+            $('#onlyOneColorSelect').on('change', function () {
+                emptyCell = onlyOneColors[$(this).val()];
+                result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
+            });
+
+            $('#onlyOneColorSelect').html(onlyOneColors.map(function (item, index) {
+                return '<option value="' + index + '">' + item + '</option>';
+            }));
+
+            $('#onlyOneColorSelect').hide();
+        });
+    </script>
 </body>
 
 </html>
