@@ -15,34 +15,89 @@
             font-family: "Segoe UI Symbol";
             src: url('./fonts/seguisym.ttf') format("truetype");
         }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chessboard {
+            font-size: 30px;
+            font-family: 'Segoe UI Symbol';
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .copy-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <div align="center">
-        <div>
-            <h1>Chess FEN to Board Conversion</h1>
+    <div class="container">
+        <div class="header">
+            <h1>Chess FEN to Unicode Board (Symbols) Conversion</h1>
             <p>Converts a FEN string to a chess board.</p>
             <p>For more information about FEN strings, see <a
                     href="https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation">Forsyth–Edwards Notation</a>.
             </p>
         </div>
-        <div><input id="fenInput" style="width: 73ch;" value="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR" />
-            <select id="whiteAndBlackSelect">
-                <option value="0">Black and white squares</option>
-                <option value="1">Black and white squares (alt)</option>
-                <option value="2">Black and white squares (alt 2)</option>
-                <option value="3">Black and white squares (alt 3)</option>
-            </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <input id="onlyOneColor" type="checkbox" /> Only one color
-            <select id="onlyOneColorSelect">
-            </select>
+        <div class="row">
+            <div class="col-md-6">
+                <input id="fenInput" class="form-control" value="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR" />
+            </div>
+            <div class="col-md-3">
+                <select id="whiteAndBlackSelect" class="form-control">
+                    <option value="0">Black and white squares</option>
+                    <option value="1">Black and white squares (alt)</option>
+                    <option value="2">Black and white squares (alt 2)</option>
+                    <option value="3">Black and white squares (alt 3)</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div class="form-check">
+                    <input id="customEmptyCells" class="form-check-input" type="checkbox" />
+                    <label class="form-check-label" for="customEmptyCells">Custom empty cell symbols</label>
+                </div>
+                <div id="customEmptyCellsContainer">
+                    <label for="customEmptyCellForWhite">White</label>
+                    <input id="customEmptyCellForWhite" />
+                    <label for="customEmptyCellForBlack">Black</label>
+                    <input id="customEmptyCellForBlack" />
+                </div>
+            </div>
         </div>
-        <div id="fenDisplay" class="mb-4 mt-4" style="font-size:35px; font-family:'Segoe UI Symbol';"></div>
-        <div>
-            <button id="copyButton" class="btn btn-secondary">Copy to clipboard</button>
+        <div class="chessboard" id="fenDisplay"></div>
+        <div class="copy-button">
+            <button id="copyButton" class="btn btn-primary">Copy to clipboard</button>
         </div>
+
+        <a href="https://azhy-slemany.github.io" style="position:fixed; top:10px;right: 20px;width:30px;">
+            <img class="github-logo" src="https://img.freepik.com/free-icon/user_318-159711.jpg" alt="GitHub Logo"
+                width="30px">
+        </a>
+        <a href="https://github.com/azhyfl/azhyfl.github.io" style="position: fixed; top: 60px;right: 20px;width:30px;">
+            <svg height="30" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="30" data-view-component="true"
+                class="octicon octicon-mark-github v-align-middle">
+                <path
+                    d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+                </path>
+            </svg>
+        </a>
     </div>
 
     <script>
@@ -65,7 +120,7 @@
 
             const [w, b] = whiteAndBlack;
 
-            const lines = fen.split('/');
+            const lines = fen.trim().split(' ')[0].split('/');
             for (let i = 0; i < lines.length; i++) {
                 var emptyCells = [];
                 for (let k = 0; k < 8; k++) {
@@ -128,31 +183,35 @@
                 result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
             });
 
-            $('#onlyOneColor').on('change', function () {
+            $('#customEmptyCells').on('change', function () {
                 if ($(this).is(':checked')) {
-                    $('#onlyOneColorSelect').show();
+                    $('#customEmptyCellsContainer').show();
                     $('#whiteAndBlackSelect').hide();
-                    differEmptyCells = false;
+                    whiteAndBlack = [$('#customEmptyCellForWhite').val(), $('#customEmptyCellForBlack').val()];
                 } else {
-                    $('#onlyOneColorSelect').hide();
+                    $('#customEmptyCellsContainer').hide();
                     $('#whiteAndBlackSelect').show();
-                    differEmptyCells = true;
+                    whiteAndBlack = whitesAndBlacks[$('#whiteAndBlackSelect').val()];
                 }
                 result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
             });
 
-            $('#onlyOneColor').prop('checked', false);
+            $('#customEmptyCells').prop('checked', false);
 
-            $('#onlyOneColorSelect').on('change', function () {
-                emptyCell = onlyOneColors[$(this).val()];
+            $('#customEmptyCellForWhite').on('input', function () {
+                whiteAndBlack = [$('#customEmptyCellForWhite').val(), $('#customEmptyCellForBlack').val()];
                 result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
             });
 
-            $('#onlyOneColorSelect').html(onlyOneColors.map(function (item, index) {
-                return '<option value="' + index + '">' + item + '</option>';
-            }));
+            $('#customEmptyCellForBlack').on('input', function () {
+                whiteAndBlack = [$('#customEmptyCellForWhite').val(), $('#customEmptyCellForBlack').val()];
+                result = convertFENToBoard($('#fenInput').val(), differEmptyCells, emptyCell, whiteAndBlack);
+            });
 
-            $('#onlyOneColorSelect').hide();
+            $('#customEmptyCellForWhite').val(whitesAndBlacks[0][0]);
+            $('#customEmptyCellForBlack').val(whitesAndBlacks[0][1]);
+
+            $('#customEmptyCellsContainer').hide();
         });
     </script>
 </body>
